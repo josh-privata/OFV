@@ -1,0 +1,20 @@
+﻿.carousel {
+    height: 600px;
+    padding-bottom: 10%;
+    margin-bottom: 50px;
+}
+.carousel .item {
+    height: 600px;
+    background-color: #777;
+}
+.carousel-caption {
+    top: 0;
+    bottom: auto;
+    padding: 3%;
+}
+.carousel p {
+    padding: 3%;
+}
+.carousel h1 {
+    padding-bottom: 3%;
+}

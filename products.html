@@ -1,0 +1,293 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OFV Products</title>
+    <script src="./js/jquery.js" type="text/javascript"></script>
+    <script src="./js/bootstrap.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+    <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+    </script>
+</head>
+
+<body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="default.html"><span class="glyphicon glyphicon-apple"></span> OFV</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="default.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="products.html">Products</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#modalLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for a product">
+                        <span class="input-group-btn">
+                            <button class="btn" type="button"><span class="glyphicon glyphicon-search"></span> Go!</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal control -->
+    <div id="modalLogin" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Login to OFV</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="well">
+                                <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                                    <div class="form-group">
+                                        <label for="username" class="control-label">Username</label>
+                                        <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="control-label">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember" id="remember"> Remember login
+                                        </label>
+                                    </div>
+                                    <a href="#" data-toggle="popover" data-content="Welcome" class="btn btn-block btn-success">Login</a>
+                                    <a href="#" data-toggle="popover" data-content="Error" class="btn btn-block btn-primary">I forgot my password</a>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <p class="lead">
+                                <span class="text-success">FREE REGISTRATION</span>
+                            </p>
+                            <ul class="list-unstyled" style="line-height: 2">
+                                <li>
+                                    <span class="fa fa-check text-success"></span> See all your past orders
+                                </li>
+                                <li>
+                                    <span class="fa fa-check text-success"></span> Fast product re-ordering
+                                </li>
+                                <li>
+                                    <span class="fa fa-check text-success"></span> Save your favorite items
+                                </li>
+                                <li>
+                                    <span class="fa fa-check text-success"></span> Easy checkout
+                                </li>
+                                <li>
+                                    <span class="fa fa-check text-success"></span>Free Banana
+                                    <small>(only new customers)</small>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href="registration.html" class="btn btn-info btn-block">Yes please, register now!</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br /><br /><br />
+
+    <!-- Products -->
+    <div class="container">
+        <div class="panel-group" id="collapse">
+            <!-- Specials -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#collapse" href="#collapse1">
+                            Specials
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="row" id="specials">
+                            <div class="col-xs-6 col-sm-4 col-md-3">
+                                <a href="oranges.html" class="thumbnail">
+                                    <img src="img/oranges.jpg" height="250" width="250">
+                                    <div class="caption">
+                                        <h4>Oranges</h4>
+                                        <p>$4.99</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3">
+                                <a href="broccoli.html" class="thumbnail">
+                                    <img src="img/broccoli.jpg" height="250" width="250">
+                                    <div class="caption">
+                                        <h4>Broccoli</h4>
+                                        <p>$3.99</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3">
+                                <a href="bananas.html" class="thumbnail">
+                                    <img src="img/bananas.jpg" height="250" width="250">
+                                    <div class="caption">
+                                        <h4>Bananas</h4>
+                                        <p>$4.59</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fruits -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#collapse" href="#collapse2">
+                            Fruits
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row" id="fruits">
+                            <div class="col-xs-6 col-sm-4 col-md-3">
+                                <a href="oranges.html" class="thumbnail">
+                                    <img src="img/oranges.jpg" height="250" width="250">
+                                    <div class="caption">
+                                        <h4>Oranges</h4>
+                                        <p>$4.99</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3">
+                                <a href="grapes.html" class="thumbnail">
+                                    <img src="./img/grapes.jpg" height="250" width="250">
+                                    <div class="caption">
+                                        <h4>Grapes</h4>
+                                        <p>$4.99</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3">
+                                <a href="bananas.html" class="thumbnail">
+                                    <img src="img/bananas.jpg" height="250" width="250">
+                                    <div class="caption">
+                                        <h4>Bananas</h4>
+                                        <p>$4.59</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vegetables -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#collapse" href="#collapse3">
+                            Organic Vegetables
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row" id="vegetables">
+                            <div class="col-xs-6 col-sm-4 col-md-3">
+                                <a href="broccoli.html" class="thumbnail">
+                                    <img src="img/broccoli.jpg" height="250" width="250">
+                                    <div class="caption">
+                                        <h4>Broccoli</h4>
+                                        <p>$3.99</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3">
+                                <a href="carrots.html" class="thumbnail">
+                                    <img src="./img/carrots.jpg" height="250" width="250">
+                                    <div class="caption">
+                                        <h4>Carrots</h4>
+                                        <p>$4.99</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3">
+                                <a href="cauliflower.html" class="thumbnail">
+                                    <img src="img/cauliflower.jpg" height="250" width="250">
+                                    <div class="caption">
+                                        <h4>Cauliflower</h4>
+                                        <p>$3.99</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="panel-footer navbar-fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <footer>
+                        <p class="pull-right">
+                            <a href="#">Back to top</a>
+                        </p>
+                        <p class="pull-left">© 2016 OFV</p>
+                        <p class="text-center">
+                            <a href="#" target="_self">Privacy</a> |
+                            <a href="#" target="_self">Terms</a> |
+                            <a href="#" target="_self">Legal Information</a> |
+                            <a href="#" target="_self">Contact Us</a> |
+                            <a href="#" target="_self">Help</a>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
